@@ -1,7 +1,5 @@
 import os
 
-from new_customer.new_cust import new_customer
-
 def mybank_start():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("******* Welcome to MyBank *******")
@@ -15,6 +13,7 @@ def mybank_start():
     choice = int(input("Enter you choice: "))
     if (choice == 1):
         print("*****   Entering New Customer Menu  *****")
+        from new_customer.new_cust import new_customer
         new_customer()
     if (choice == 2):
         print("*****   Entering Existing Customer Menu  *****")

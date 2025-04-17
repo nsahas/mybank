@@ -30,6 +30,7 @@ def new_customer():
         print("*****   Change you security PIN  *****")
     if (choice == 4):
         print("*****   Going bank to MyBank Main Menu *****")
-        #mybank_start()
+        from main import mybank_start
+        mybank_start()
     if (choice == 5):
         print("*****   Exiting MyBank  *****")
