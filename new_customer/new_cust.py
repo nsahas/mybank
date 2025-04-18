@@ -24,15 +24,18 @@ import os
 
 def customer_details():
     print("Enter your details:")
-    first_name = input("First name: ") 
-    last_name = input("Last name: ")
-    birth = input("Date of Birth (mm/dd/year): ")
+    first_name = input("Enter First Name: ") 
+    last_name = input("Enter Last Name: ")
+    birth = input("Date of Birth (mm/dd/yyyy): ")
     address = input("Address: ")
-    state = input("State: ")
     city = input("City: ")
+    state = input("State: ")
     zip = int(input("Zip Code: "))
-    phone = input("Phone Number: ")
-    email = input("Email Address: ")
+    phone = input("Enter Phone Number: ")
+    email = input("Enter Email Address: ")
+    pin = input("Choose 4 digit pin: ")
+    intial_deposit = float(input("Initial Deposit Amount: "))
+
     print ("")
    
     print (f"Name - {first_name} {last_name} ")
@@ -40,11 +43,13 @@ def customer_details():
     print (f"Address - {address}, {city}, {state}, {zip}")
     print (f"Phone Number {phone}")
     print (f"Email {email}")
+    print (f"PIN Selected {pin}")
+    print (f"Intial Deposit {intial_deposit}")
     print ("")
-    confirm = input("Confirm all details are correct, if not make changes. (Yes/No): ")
-    if confirm == "Yes":
+    confirm = input("Confirm all details are correct, if not make changes. (Y/N): ")
+    if confirm == "Y":
         print (f"*****   Welcome to MyBank {first_name} {last_name}.\n You have few more steps to complete your account.")
-    elif confirm == "No":
+    else:
         print ("Restart entering your details.")
         return customer_details()
     
