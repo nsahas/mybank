@@ -19,7 +19,7 @@ def new_customer():
     print("2. Add Funds to Account")
     print("3. Change PIN")
     print("4. Bank to Previous Menu")
-    print("4. Exit")
+    print("5. Exit")
 
     choice = int(input("Enter you choice: "))
     if (choice == 1):

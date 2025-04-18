@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Python
+_pycache_/
+*.py[cod]
+*.so
+
+# Compiled source
+*.class
+*.o
+*.out
+*.exe
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Node.js
+node_modules/
+
+# VS Code settings
+.vscode/
+
+# Environment files
+.env
+
+# Misc
+*.swp
+*.bak
+*.tmp
