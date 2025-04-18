@@ -1,6 +1,6 @@
 import os
 
-from new_customer.new_cust import new_customer
+# from new_customer.new_cust import new_customer
 
 def mybank_start():
     os.system('cls' if os.name == 'nt' else 'clear')
