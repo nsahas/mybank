@@ -104,8 +104,8 @@ def create_account():
             "pin": pin,
             "balance": initial_deposit,
             "transactions": [
-                {"type": "initial_deposit", "amount": initial_deposit, "timestamp": now.timestamp()},
-                {"type": "pin_create", "old_pin": "", "new_pin": pin, "timestamp": now.timestamp()}
+                {"type": "initial_deposit", "amount": initial_deposit, "timestamp": now.strftime("%Y-%m-%d %H:%M:%S")},
+                {"type": "pin_create", "old_pin": "", "new_pin": pin, "timestamp": now.strftime("%Y-%m-%d %H:%M:%S")}
             ]
         }
 
