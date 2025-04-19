@@ -113,7 +113,7 @@ def create_account():
         account_data = json.dumps(customer_data, indent=4)
 
         # Save customer data to a file
-        folder_path = 'MyBank_Accounts'
+        folder_path = 'mynank_accounts'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
@@ -140,7 +140,7 @@ def deposit():
     pin = input("Enter your 4-digit PIN: ")
 
     # Define the directory where account files are stored
-    directory_path = os.getcwd() + '/MyBank_Accounts'
+    directory_path = os.getcwd() + '/mybank_accounts'
 
     # Get a list of all files in the specified directory
     files = os.listdir(directory_path)
