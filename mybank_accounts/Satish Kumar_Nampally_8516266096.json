@@ -1,0 +1,27 @@
+{
+    "account_number": 8516266096,
+    "first_name": "Satish Kumar",
+    "last_name": "Nampally",
+    "dob": "12/16/1978",
+    "address": "3544 S Jasmine Dr",
+    "state": "AZ",
+    "city": "Chandler",
+    "zip": 85286,
+    "phone": "8135933248",
+    "email": "satish.nampally@gmail.com",
+    "pin": "9854",
+    "balance": 550.0,
+    "transactions": [
+        {
+            "type": "initial_deposit",
+            "amount": 550.0,
+            "timestamp": 1745028864.045311
+        },
+        {
+            "type": "pin_create",
+            "old_pin": "",
+            "new_pin": "9854",
+            "timestamp": 1745028864.045311
+        }
+    ]
+}
