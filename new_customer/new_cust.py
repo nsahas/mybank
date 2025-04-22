@@ -39,8 +39,7 @@ def new_customer():
         print("*****   Let's add funds to your account  *****")
         deposit()
     elif choice == 3:
-        print("*****   Change your security PIN  *****")
-        # Implement PIN change functionality here if needed
+            print("*****   Change your security PIN  *****")
     elif choice == 4:
         print("*****   Going back to MyBank Main Menu *****")
         from main import mybank_start
@@ -49,6 +48,7 @@ def new_customer():
         print("*****   Exiting MyBank  *****")
     else:
         print("Invalid option. Please try again.")
+
 
 # Function to handle the creation of a new customer account
 def create_account():
@@ -113,7 +113,7 @@ def create_account():
         account_data = json.dumps(customer_data, indent=4)
 
         # Save customer data to a file
-        folder_path = 'mynank_accounts'
+        folder_path = 'mybank_accounts'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
@@ -133,7 +133,7 @@ def create_account():
 # Function to handle deposit into a customer's account
 def deposit():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("*****  Deposit money into MyBank Account  *****")
+    print("*****  Deposit funds into your bank  *****")
 
     # Collect necessary details
     account_number = input("Enter the Account Number: ")
@@ -161,5 +161,42 @@ def deposit():
     else:
         print("No matching file found.")
 
-    # Optionally, you can add the logic for handling deposit amount here
-    # Example: amount = float(input("Enter Amount: "))
+#Change pin
+def change_pin():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("*****  Change your current 4 digit PIN  *****")
+    account_number = input("Enter the Account Number: ")
+    pin = input("Enter your 4-digit PIN: ")
+
+    directory_path = os.getcwd() + '/mybank_accounts'
+
+    files = os.listdir(directory_path)
+    for file in files:
+        print(f"Checking file: {file}")
+        if file.endswith('.json') and file[:-5].endswith(account_number):
+            file_path = os.path.join(directory_path, file)  # Construct the full file path
+            
+            # Open the file and read the JSON data
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+            
+            if pin == data["pin"]:
+                change_pin = int(input("Enter new 4 digit PIN: "))
+                confirm_pin = int(input("Confirm the new 4 digit PIN: "))
+
+                if change_pin == confirm_pin:
+                    print("Your new 4-digit PIN has been successfully changed.")
+                    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    data["transactions"].append({
+                        "type": "pin_change",
+                        "old_pin": pin,
+                        "new_pin": change_pin,
+                        "timestamp": now
+                    })
+                    data["pin"] = change_pin
+                else:
+                    print("New & Conrirmed pin doesn't natch")
+            else:   
+                print("Invalid 4 digit PIN.")
+        else:
+            print("No matching account found.")
