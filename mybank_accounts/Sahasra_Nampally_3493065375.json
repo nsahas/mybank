@@ -9,7 +9,7 @@
     "zip": 85286,
     "phone": "6028024304",
     "email": "sahasra.nampally28@gmail.com",
-    "pin": "1256",
+    "pin": "2806",
     "balance": 5000.0,
     "transactions": [
         {
@@ -22,6 +22,18 @@
             "old_pin": "",
             "new_pin": "1256",
             "timestamp": 1745028801.614504
+        },
+        {
+            "type": "pin_change",
+            "old_pin": "1256",
+            "new_pin": "2805",
+            "timestamp": "2025-04-21 20:48:58"
+        },
+        {
+            "type": "pin_change",
+            "old_pin": "2805",
+            "new_pin": "2806",
+            "timestamp": "2025-04-21 20:50:52"
         }
     ]
 }

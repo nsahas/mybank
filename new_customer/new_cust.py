@@ -39,7 +39,8 @@ def new_customer():
         print("*****   Let's add funds to your account  *****")
         deposit()
     elif choice == 3:
-            print("*****   Change your security PIN  *****")
+        print("*****   Change your security PIN  *****")
+        change_pin()
     elif choice == 4:
         print("*****   Going back to MyBank Main Menu *****")
         from main import mybank_start
@@ -181,8 +182,8 @@ def change_pin():
                 data = json.load(f)
             
             if pin == data["pin"]:
-                change_pin = int(input("Enter new 4 digit PIN: "))
-                confirm_pin = int(input("Confirm the new 4 digit PIN: "))
+                change_pin = input("Enter new 4 digit PIN: ")
+                confirm_pin = input("Confirm the new 4 digit PIN: ")
 
                 if change_pin == confirm_pin:
                     print("Your new 4-digit PIN has been successfully changed.")
@@ -194,6 +195,9 @@ def change_pin():
                         "timestamp": now
                     })
                     data["pin"] = change_pin
+                    with open(file_path, "w") as f:
+                        f.write(json.dumps(data, indent=4))
+                    break
                 else:
                     print("New & Conrirmed pin doesn't natch")
             else:   
