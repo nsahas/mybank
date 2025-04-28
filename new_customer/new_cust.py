@@ -82,7 +82,7 @@ def create_account():
     # Confirm the details
     confirm = input("Confirm all details are correct, if not make changes. (Y/N): ")
 
-    if confirm == "Y":
+    if confirm == "Y" or confirm == "y":
         print(f"*****   Welcome to MyBank {first_name} {last_name}. We have a few more steps to complete your account.")
         print("*****  Process of Account Creation Started  *****")
         
@@ -125,7 +125,7 @@ def create_account():
     else:
         # Prompt for retry or exit
         contd = input("Do you want to create an account or exit? (Y/N): ")
-        if contd == "Y":
+        if contd == "Y" or contd == "y":
             print("We need to recollect your details.")
             return create_account()  # Recursively call the function to start over
         else:
